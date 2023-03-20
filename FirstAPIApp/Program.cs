@@ -23,10 +23,14 @@ namespace FirstAPIApp
             //builder.Services.AddTransient<ProgrammingClubDataContext, ProgrammingClubDataContext>();
             builder.Services.AddTransient<IAnnouncementsRepository, AnnouncementsRepository>();
             builder.Services.AddTransient<IAnnouncementsService, AnnouncementsService>();
-            //builder.Services.AddTransient<MembersRepository, MembersRepository>();
-            //builder.Services.AddTransient<MembershipsRepository, MembershipsRepository>();
-            //builder.Services.AddTransient<MembershipTypesRepository, MembershipTypesRepository>();
-            //builder.Services.AddTransient<CodeSnippetsRepository, CodeSnippetsRepository>();
+            //builder.Services.AddTransient<IMembersRepository, MembersRepository>();
+            //builder.Services.AddTransient<IMembersService, MembersService>();
+            //builder.Services.AddTransient<IMembershipsRepository, MembershipsRepository>();
+            //builder.Services.AddTransient<IMembershipsService, MembershipsService>();
+            builder.Services.AddTransient<IMembershipTypesRepository, MembershipTypesRepository>();
+            builder.Services.AddTransient<IMembershipTypesService, MembershipTypesService>();
+            //builder.Services.AddTransient<ICodeSnippetsRepository, CodeSnippetsRepository>();
+            //builder.Services.AddTransient<ICodeSnippetsService, CodeSnippetsService>();
 
             var app = builder.Build();
 
