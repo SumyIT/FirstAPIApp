@@ -1,10 +1,12 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
-namespace FirstAPIApp.DTOs
+namespace FirstAPIApp.DTOs.CreateUpdateObjects
 {
-    public class Announcement
+    public class CreateUpdateAnnouncement
     {
         [Key]
+        [JsonIgnore]
         public Guid IdAnnouncement { get; set; }
 
         [Required(ErrorMessage = "Acest camp este obligatoriu!!!")]

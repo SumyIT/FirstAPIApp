@@ -32,6 +32,8 @@ namespace FirstAPIApp
             //builder.Services.AddTransient<ICodeSnippetsRepository, CodeSnippetsRepository>();
             //builder.Services.AddTransient<ICodeSnippetsService, CodeSnippetsService>();
 
+            builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.

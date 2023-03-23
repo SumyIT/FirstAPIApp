@@ -1,5 +1,6 @@
 ﻿using FirstAPIApp.DataContext;
 using FirstAPIApp.DTOs;
+using Microsoft.EntityFrameworkCore;
 
 namespace FirstAPIApp.Repositories
 {
