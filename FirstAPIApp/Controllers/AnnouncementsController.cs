@@ -5,6 +5,8 @@ using FirstAPIApp.DTOs.PatchObjects;
 using FirstAPIApp.Helpers;
 using FirstAPIApp.Models;
 using FirstAPIApp.Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
@@ -13,6 +15,7 @@ namespace FirstAPIApp.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public class AnnouncementsController : ControllerBase
     {
         private readonly IAnnouncementsService _announcementsService;
@@ -111,7 +114,7 @@ namespace FirstAPIApp.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutAnnouncement([FromRoute]Guid id, [FromBody]CreateUpdateAnnouncement announcement)
+        public async Task<IActionResult> PutAnnouncement([FromRoute] Guid id, [FromBody] CreateUpdateAnnouncement announcement)
         {
             try
             {
